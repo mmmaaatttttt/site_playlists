@@ -35,3 +35,10 @@ CREATE TABLE playlist_tracks (
     playlist_id integer REFERENCES playlists(id) ON DELETE CASCADE,
     order_in_playlist integer NOT NULL
 );
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    email text UNIQUE NOT NULL,
+    username text UNIQUE NOT NULL,
+    password text NOT NULL
+);
